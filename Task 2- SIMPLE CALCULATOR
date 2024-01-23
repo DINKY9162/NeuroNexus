@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+
+  char operation;
+  float n1, n2;
+  cout<<"***SIMPLE CALCULATOR***\n";
+  cout<<"Enter '+' For Addition\n";
+  cout<<"Enter '-' For Subtraction\n";
+  cout<<"Enter '*' For Multiplication\n";
+  cout<<"Enter '/' For Division\n";
+  cout<<"Enter the operation you want to perform: +, -, *, / \n";
+  cin>> operation;
+  if (operation != '+' && operation != '-' && operation != '*' && operation != '/') {
+        cout << "Invalid Operation" << endl;
+        return 1; 
+    }
+
+  cout<<"Enter two operands:\n";
+  cout<<"Enter the First operand:\n";
+  cin>>n1; 
+  cout<<"Enter the Second operand:\n";
+  cin>>n2;
+
+  switch(operation) {
+
+    case '+':
+      cout <<"Result:"<<n1 << " + " << n2 << " = " << n1 + n2<<endl;
+      break;
+
+    case '-':
+      cout <<"Result:"<< n1 << " - " << n2 << " = " << n1 - n2<<endl;
+      break;
+
+    case '*':
+      cout <<"Result:"<< n1 << " * " << n2 << " = " << n1 * n2<<endl;;
+      break;
+
+    case '/':
+      if(n2!=0){
+      cout <<"Result:"<< n1 << " / " << n2 << " = " << n1 / n2<<endl;
+      }
+      else{
+      	cout<<"Division by zero can't be defined"<<endl;
+	  }
+      break;
+
+    default:
+      cout << "Invalid Operation"<<endl;
+      break;
+  }
+
+  return 0;
+}
